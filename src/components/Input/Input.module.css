@@ -1,0 +1,25 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.input {
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  width: 300px;
+  font-weight: 400;
+  font-size: 17px;
+  transition: 200ms border linear;
+  color: rgb(131, 131, 131);
+}
+
+.input:focus {
+  outline: none;
+  border: 5px solid rgba(255, 255, 255, 0.9);
+  transition: 200ms border linear;
+}

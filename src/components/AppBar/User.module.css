@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ImUser {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  color: rgb(100, 70, 100);
+  background-color: rgb(255, 255, 255);
+}
+.user {
+  margin-left: 15px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+.btn {
+  min-width: 90px;
+  height: 35px;
+  font-size: 20px;
+  padding: 5px;
+  margin-left: 15px;
+  border: none;
+  border-radius: 10px;
+  color: rgb(122, 122, 122);
+  background-color: rgb(150, 200, 255);
+  cursor: pointer;
+  outline: none;
+}
+.btn:hover,
+.btn:focus {
+  color: rgb(10, 10, 10);
+  background-color: rgb(98, 166, 255);
+}

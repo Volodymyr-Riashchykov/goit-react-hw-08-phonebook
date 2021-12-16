@@ -1,0 +1,29 @@
+/*  */
+.container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 20, 255, 0.9);
+  z-index: 1;
+}
+
+.link {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 10px;
+  color: rgb(122, 122, 122);
+  background-color: rgb(163, 203, 255);
+}
+.link:not(:last-child) {
+  margin-right: 30px;
+}
+.active {
+  color: rgb(107, 0, 194);
+  background-color: rgb(98, 166, 255);
+  transition: color 300ms linear, background-color 300ms linear;
+}

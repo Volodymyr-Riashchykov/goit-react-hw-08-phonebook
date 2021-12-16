@@ -1,0 +1,44 @@
+.heading {
+  padding: 30px 0;
+  color: #ffffff;
+}
+.contact {
+  padding: 15px 0;
+  font-size: 30px;
+  color: #ffffff;
+}
+.btn {
+  min-width: 90px;
+  height: 35px;
+  margin-top: 15px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  color: rgb(100, 100, 100);
+
+  background-color: rgb(180, 200, 255);
+
+  cursor: pointer;
+  outline: none;
+
+  transition: color 300ms linear, background-color 300ms linear;
+}
+.btn:hover,
+.btn:focus {
+  color: rgb(180, 200, 255);
+  background-color: rgb(98, 166, 255);
+}
+
+.paragraph {
+  padding-top: 40px;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}

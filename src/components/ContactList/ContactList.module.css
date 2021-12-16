@@ -1,0 +1,22 @@
+.list {
+  padding: 20px;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  width: 600px;
+  font-size: 20px;
+}
+
+.btn {
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(100, 150, 250, 0.3);
+}
+.btn:hover,
+.btnReg:focus {
+  color: rgba(200, 200, 200, 0.7);
+  background-color: rgba(150, 150, 150, 0.8);
+}
