@@ -8,10 +8,10 @@ import RegisterView from "../../views/RegisterView";
 import LoginView from "../../views/LoginView";
 import ContactsView from "../../views/ContactsView";
 import HomeView from "../../views/HomeView";
-import PrivateRoute from "../../views/PrivateRoute";
-import PublicRoute from "../../views/PublicRoute";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import PublicRoute from "../PublicRoute/PublicRoute";
 import { authOperations,authSelectors } from "../../Redux/auth";
-// import { ToastContainer } from "react-toastify";
+
 
 export default function Mobile() {
   const dispatch = useDispatch();

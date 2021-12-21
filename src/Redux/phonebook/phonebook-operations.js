@@ -2,14 +2,14 @@
 import axios from "axios";
 import * as actions from "./phonebook-actions";
 
-axios.defaults.baseURL = "https://goit-phonebook-api.herokuapp.com/";
+axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
 
 const fetchContact = () => (dispatch) => {
   dispatch(actions.fetchContactRequest());
   axios
     .get("/contacts")
     .then(({ data }) => dispatch(actions.fetchContactSuccess(data)))
-    .catch((error) => actions.fetchContactError(error));
+    .catch((error) => actions.fetchContactError(error.message));
 };
 
 const addContact = (name, number) => (dispatch) => {
@@ -18,7 +18,7 @@ const addContact = (name, number) => (dispatch) => {
   axios
     .post("/contacts", contact)
     .then(({ data }) => dispatch(actions.addContactSuccess(data)))
-    .catch((error) => dispatch(actions.addContactError(error)));
+    .catch((error) => dispatch(actions.addContactError(error.message)));
 };
 
 const onDeleted = (contactId) => (dispatch) => {
@@ -26,7 +26,7 @@ const onDeleted = (contactId) => (dispatch) => {
   axios
     .delete(`/contacts/${contactId}`)
     .then(() => dispatch(actions.deleteContactSuccess(contactId)))
-    .catch((error) => dispatch(actions.deleteContactError(error)));
+    .catch((error) => dispatch(actions.deleteContactError(error.message)));
 };
 
 export default { addContact, onDeleted, fetchContact };

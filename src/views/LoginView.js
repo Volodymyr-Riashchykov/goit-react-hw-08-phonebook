@@ -26,7 +26,7 @@ export default function Login() {
     setEmail("");
     setPassword("");
   };
-
+  
   return (
     <div>
       <h1 className={s.heading}>Страница авторизации</h1>
@@ -36,18 +36,18 @@ export default function Login() {
           name="Почта"
           value={email}
           handleChange={handleChange}
-          title=""
-          pattern=""
+          title="Email должен содержать знаки @ и ."
+          pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
         />
         <Input
           type="password"
           name="Пароль"
           value={password}
           handleChange={handleChange}
-          title=""
-          pattern=""
+          title="Пароль может состоять только из букв, цифр, апострофа, тире и пробелов."
+          pattern="^[a-zA-Zа-яА-Я0-9]+(([' -][a-zA-Zа-яА-Я0-9 ])?[a-zA-Zа-яА-Я0-9]*)*$"
         />
-        <button className={s.btn} type="submit" onClick={handleSubmite}>
+        <button className={s.btn} type="submit">
           Войти
         </button>
       </form>

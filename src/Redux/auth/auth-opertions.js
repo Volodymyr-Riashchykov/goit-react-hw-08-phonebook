@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "https://goit-phonebook-api.herokuapp.com";
+axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
 
 const token = {
   set(token) {
@@ -12,44 +12,52 @@ const token = {
   },
 };
 
-const register = createAsyncThunk("auth/register", async (credentials) => {
+const register = createAsyncThunk("auth/register", async (credentials, thunkAPI) => {
   try {
     const { data } = await axios.post("/users/signup", credentials);
     token.set(data.token);
     return data;
   } catch (error) {
-    if (error) {
-      alert("Такой пользователь уже есть.");
-      throw new Error(error);
-    }
+    // if (error) {
+    //   alert("Такой пользователь уже есть.");
+    //   throw new Error(error);
+    // }
+    
+    return thunkAPI.rejectWithValue(error.message);
   }
 });
 
-const logIn = createAsyncThunk("auth/logIn", async (credentials) => {
+const logIn = createAsyncThunk("auth/logIn", async (credentials,thunkAPI) => {
   try {
     const { data } = await axios.post("/users/login", credentials);
     token.set(data.token);
     return data;
   } catch (error) {
-    if (error) {
-      alert(
-        "Данные введены неверно."
-      );
-      throw new Error(error);
-    }
+    // if (error) {
+    //   alert(
+    //     "Данные введены неверно."
+    //   );
+    //   throw new Error(error);
+    // }
+    // console.log('err',error)
+    return thunkAPI.rejectWithValue(error.message);
   }
 });
 
-const logOut = createAsyncThunk("auth/logout", async () => {
+const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   try {
+    // const state = thunkAPI.getState();
     const { data } = await axios.post("/users/logout");
     token.unset();
+    // console.log('con=', state.phonebook)
+    // state.phonebook.contacts = [];
     return data;
   } catch (error) {
-    if (error) {
-      alert("Что то пошло не так.");
-      throw new Error(error);
-    }
+    // if (error) {
+    //   alert("Что то пошло не так.");
+    //   throw new Error(error);
+    // }
+    return thunkAPI.rejectWithValue(error.message);
   }
 });
 
@@ -68,10 +76,11 @@ const getCurrentUser = createAsyncThunk(
       const { data } = await axios.get("/users/current");
       return data;
     } catch (error) {
-      if (error) {
-        alert("Попробуйте еще раз.");
-        throw new Error(error);
-      }
+      // if (error) {
+      //   alert("Попробуйте еще раз.");
+      //   throw new Error(error);
+      // }
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );

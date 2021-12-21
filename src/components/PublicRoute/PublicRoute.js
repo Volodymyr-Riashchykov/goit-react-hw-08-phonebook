@@ -1,6 +1,6 @@
 import { Redirect, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { authSelectors } from "../Redux/auth";
+import { authSelectors } from "../../Redux/auth";
 
 export default function PublicRoute({
   children,
